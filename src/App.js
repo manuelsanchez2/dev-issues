@@ -6,7 +6,7 @@ import { getIssues } from "./api/gitHub";
 
 function App() {
   let results = Results({
-    values: ["Issue A", "Issue B"],
+    issues: [],
   });
 
   async function handleChange(query) {
@@ -15,8 +15,15 @@ function App() {
     
     console.log(issues);
 
+    // const items = [];
+    // issues.items.forEach(issue => {
+    //   items.push(issue.title);
+    // });
+
+    const items = issues.items.map((issue) => issue.title);
+
     const newResults = Results({
-      values: ["123", "3245345"],
+      issues: issues.items,
     });
 
     results.parentElement.replaceChild(newResults, results);

@@ -1,9 +1,9 @@
 import { createElement } from "../utils/elements";
 
 function Results(props) {
-  const listItems = [];
-  props.values.forEach((value) => {
-    listItems.push(createElement("li", { innerText: value }));
+  const listItems = props.issues.map((issue) => {
+    const link = createElement('a', {href: issue.html_url, innerText: issue.title, target: "_blank"});
+    return createElement("li", { innerText: issue.title }, [link]);
   });
 
   const list = createElement("ul", {}, listItems);
