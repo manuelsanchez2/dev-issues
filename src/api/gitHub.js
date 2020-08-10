@@ -1,5 +1,6 @@
 function createIssuesURL(query) {
-  return "https://api.github.com/search/issues?q=" + query;
+  // return "https://api.github.com/search/issues?q=" + query;
+  return `https://api.github.com/search/issues?q=${query}`;
 }
 
 export async function getIssues(query) {

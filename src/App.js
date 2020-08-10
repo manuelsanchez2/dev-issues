@@ -15,11 +15,6 @@ function App() {
     
     console.log(issues);
 
-    // const items = [];
-    // issues.items.forEach(issue => {
-    //   items.push(issue.title);
-    // });
-
     const items = issues.items.map((issue) => issue.title);
 
     const newResults = Results({

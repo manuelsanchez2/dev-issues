@@ -18,6 +18,14 @@ function SearchBox(props) {
     props.onChange(input.value);
   });
 
+  input.addEventListener("keydown", (e) => {
+    if(e.keyCode == 13) {
+      props.onChange(input.value);
+    } else {
+      console.log('NO WORK');
+    }
+  })
+
   return container;
 }
 
