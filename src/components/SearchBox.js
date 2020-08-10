@@ -26,7 +26,14 @@ let timeoutId = null;
       console.log(input.value);
     }, 500);
    
+  
+
     // props.onChange(input.value);
+  })
+  input.addEventListener("keydown", (event) => {
+    if (event.keyCode === 13) {
+      props.onChange(input.value);
+    }
   })
 
   // input.addEventListener("keydown", (e) => {
