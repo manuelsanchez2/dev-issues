@@ -18,13 +18,31 @@ function SearchBox(props) {
     props.onChange(input.value);
   });
 
-  input.addEventListener("keydown", (e) => {
-    if(e.keyCode == 13) {
+let timeoutId = null;
+
+  input.addEventListener("input", () => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      console.log(input.value);
+    }, 500);
+   
+  
+
+    // props.onChange(input.value);
+  })
+  input.addEventListener("keydown", (event) => {
+    if (event.keyCode === 13) {
       props.onChange(input.value);
-    } else {
-      console.log('NO WORK');
     }
   })
+
+  // input.addEventListener("keydown", (e) => {
+  //   if(e.keyCode === 13) {
+  //     props.onChange(input.value);
+  //   } else {
+  //     console.log('NO WORK');
+  //   }
+  // })
 
   return container;
 }
